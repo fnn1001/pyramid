@@ -1,0 +1,117 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #0041C4, #000); /* Blue to black gradient */
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+#scoreboard, #timer {
+    position: absolute;
+    top: 10px;
+    font-size: 20px;
+}
+
+#scoreboard {
+    left: 10px;
+}
+
+
+
+.container {
+    text-align: center;
+}
+
+#pyramid {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 30px;
+}
+
+.floor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.element {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    background-color: #fff; /* White color */
+    border-radius: 10%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+    cursor: pointer;
+}
+
+.element:hover {
+    background-color: #eee; /* Light gray color */
+    transform: scale(1.05);
+}
+
+@keyframes shatter {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.shatter {
+    animation: shatter 0.5s ease-in forwards;
+}
+
+button#start-game {
+    background-color: #0072CE; /* Blue color */
+    color: #fff;
+    border: none;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 20px 2px;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    border-radius: 50px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.5px;
+}
+
+button#start-game:hover {
+    background-color: #005999; /* Darker blue color */
+    transform: scale(1.05);
+}
+
+button#start-game:active {
+    background-color: #003666; /* Even darker blue color */
+    transform: scale(0.95);
+}
+
+/* CSS */
+@keyframes cascade {
+    0% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100%); /* Adjusted to 100% */
+        opacity: 0;
+    }
+}
+
+.card {
+    position: absolute;
+    width: 50px;
+    height: 87px; /* typical dimensions for a card */
+    background: url('card.png'); /* replace with the actual card image */
+    animation: cascade 2s linear infinite;
+}
